@@ -38,10 +38,10 @@ with ThreadPoolExecutor() as executor:
 - What we want
 ```sh
 Hello from th1:0
+Hello from th1:1
 ===Done===
 Redirected Stdout:
 Hello from th2:0
-Hello from th1:1
 Hello from th2:1
 ```
 
