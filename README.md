@@ -69,7 +69,7 @@ def run_hook(value):
 ## Install
 
 ```sh
-$ pip install stdio_proxy
+$ pip install stdio-proxy
 ```
 
 ## Usage
