@@ -27,5 +27,6 @@ setup(
         "License :: OSI Approved :: MIT License",
     ],
     install_requires=["futures; python_version == '2.7'"],
+    extras_require={"develop": ["typing; python_version == '2.7'"]},
     package_data={"stdio_proxy": ["py.typed"]},
 )

@@ -1,4 +1,9 @@
 # stdio\_proxy
+[![PyPI](https://img.shields.io/pypi/v/stdio-proxy.svg)](https://pypi.org/project/stdio-proxy/)
+[![PyPI Supported Python Versions](https://img.shields.io/pypi/pyversions/stdio-proxy.svg)](https://pypi.org/project/stdio-proxy/)
+[![GitHub license](https://img.shields.io/github/license/bonprosoft/stdio_proxy.svg)](https://github.com/bonprosoft/stdio_proxy)
+[![GitHub Actions (Tests)](https://github.com/bonprosoft/stdio_proxy/workflows/tests/badge.svg)](https://github.com/bonprosoft/stdio_proxy)
+
 
 stdio\_proxy is a thread-safe library for Python 2.7 and Python 3.5+ that can temporarily redirect stdio to another objects.
 
