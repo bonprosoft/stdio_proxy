@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 setup(
     name="stdio_proxy",
@@ -26,7 +26,6 @@ setup(
         "Programming Language :: Python",
         "License :: OSI Approved :: MIT License",
     ],
-    install_requires=[
-        "futures; python_version == '2.7'",
-    ],
+    install_requires=["futures; python_version == '2.7'"],
+    package_data={"stdio_proxy": ["py.typed"]},
 )

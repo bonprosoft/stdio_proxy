@@ -1,4 +1,4 @@
 include README.md
 include LICENSE
 
-recursive-include stdio_proxy *.py
+recursive-include stdio_proxy *.py py.typed
