@@ -40,7 +40,9 @@ def _print_test_message(msg, err_msg, n_times=5, sleep=None):
 
     sys.stdout.flush()
     sys.stderr.flush()
-    return "\n".join(read_strs)
+    sys.stdin.flush()
+
+    return "".join(read_strs)
 
 
 @contextlib.contextmanager
@@ -94,7 +96,7 @@ def test_multithread_proxy(fake_stdin):
 
     def _run(value):
         # type: (int) -> Dict[str, Union[str, bytes]]
-        input_msgs = b"{}_in\n" * value
+        input_msgs = ("{}_in\n".format(value).encode("utf-8")) * value
         with _hook_stdio(input_msgs) as result:
             assert sys.stdin != original_stdin
             assert sys.stdout != original_stdout
@@ -119,7 +121,10 @@ def test_multithread_proxy(fake_stdin):
     assert sys.stdout == original_stdout
     assert sys.stderr == original_stderr
 
+    assert result1["stdin"] == "2_in\n2_in\n"
     assert result1["stdout"] == b"2\n2\n"
     assert result1["stderr"] == b"2_err\n2_err\n"
+
+    assert result2["stdin"] == "3_in\n3_in\n3_in\n"
     assert result2["stdout"] == b"3\n3\n3\n"
     assert result2["stderr"] == b"3_err\n3_err\n3_err\n"
