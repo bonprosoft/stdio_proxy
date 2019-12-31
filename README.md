@@ -80,14 +80,14 @@ $ pip install stdio-proxy
 ## Usage
 
 - Redirect a buffer to `stdin`
-```
+```py
 buf = io.BytesIO(b"foo\n")
 with stdio_proxy.redirect_stdin(buf):
     print("Read: {}".format(sys.stdin.readline()))
 ```
 
 - Redirect `stdout` to a buffer
-```
+```py
 buf = io.BytesIO()
 with stdio_proxy.redirect_stdout(buf):
     print("foo")
@@ -95,7 +95,7 @@ print("Redirected: {}".format(buf.getvalue()))
 ```
 
 - Redirect `stderr` to a buffer
-```
+```py
 buf = io.BytesIO()
 with stdio_proxy.redirect_stderr(buf):
     sys.stderr.write("foo\n")
